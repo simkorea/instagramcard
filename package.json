@@ -1,0 +1,20 @@
+{
+  "name": "card-news-agent",
+  "version": "1.0.0",
+  "description": "카드뉴스 자동화 에이전트 SCV 스크립트",
+  "private": true,
+  "scripts": {
+    "trend:auto": "node .claude/scv/trend-collector.js --mode auto",
+    "trend:keyword": "node .claude/scv/trend-collector.js --mode keyword --keyword",
+    "research": "node .claude/scv/research-crawler.js --keyword",
+    "render": "node .claude/scv/html-renderer.js --input output/drafts/slides/ --output output/final/images/",
+    "status": "node .claude/scv/file-handler.js --action status"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.89.0",
+    "puppeteer": "^21.11.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

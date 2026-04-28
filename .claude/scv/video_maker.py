@@ -112,7 +112,7 @@ SUBTITLE_BOTTOM_GAP = 72
 SUBTITLE_MAX_CHARS  = 26
 
 # ── 규칙 4: 중앙 임팩트 자막 ─────────────────────────────────────────────────
-DYN_FONT_SIZE       = 56      # 80px에서 30% 축소 → 56px
+DYN_FONT_SIZE       = 112     # 2x 확대 (기존 56px → 112px)
 DYN_POS_RATIO       = 0.65   # 화면 65% 지점 (중앙보다 아래)
 DYN_POS_PREV_RATIO  = 0.52   # 이전 자막: 현재보다 위 (리듬 누적 효과)
 IMPACT_ANIM_T1      = 0.15   # 0 ~ 0.15s: 0.7 → 1.08 스케일업

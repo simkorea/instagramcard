@@ -51,8 +51,11 @@ node .claude/scv/html-renderer.js --input output/drafts/slides/ --topic "주제�
 echo "y" | python .claude/scv/instagram-uploader.py --images-dir "output/final/YYYYMMDD_주제명"
 python .claude/scv/threads-uploader.py --images-dir "output/final/YYYYMMDD_주제명" --yes
 
-# 릴스 영상 (상세 옵션 → .claude/experts/video-engineer.md)
-python .claude/scv/video_maker.py --images-dir "output/final/YYYYMMDD_주제명" \
+# 릴스 영상 — Leonardo 배경 5장 생성 후 실행 (상세 → .claude/experts/video-engineer.md)
+# 1) Leonardo Lucid Realism으로 720×1280 배경 5장 생성 → output/assets/video-bg/
+# 2) output/final/YYYYMMDD_주제명_videobg/ 로 복사
+# 3) video_maker.py 실행
+python .claude/scv/video_maker.py --images-dir "output/final/YYYYMMDD_주제명_videobg" \
   --tts --narration output/drafts/narration.txt --bgm output/assets/bgm.mp3
 ```
 

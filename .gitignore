@@ -1,12 +1,30 @@
-# 자격증명 (절대 올리지 말 것)
+# 자격증명 & 토큰 (절대 올리지 말 것)
+.env
 .instagram_credentials.json
 .instagram_session.json
 .threads_credentials.json
-.env
+.tiktok_token.json
+.tiktok_pkce.json
+.tiktok_cert.pem
+.tiktok_key.pem
+.youtube_token.json
+client_secrets.json
 
 # 결과물 (용량 큰 파일)
 output/final/
+output/assets/
+output/video/
+output/data/
+output/state.json
 output/drafts/slides/*.png
+
+# 외부 바이너리 & 임시 파일
+ngrok.exe
+*.zip
+.ngrok.log
+
+# 로컬 전용 설정
+.claude/settings.local.json
 
 # 노드 모듈
 node_modules/
@@ -14,3 +32,5 @@ node_modules/
 # 파이썬 캐시
 __pycache__/
 *.pyc
+*.pyo
+tts_cache/

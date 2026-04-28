@@ -207,13 +207,13 @@ def upload_to_litterbox(jpg_path: Path) -> str:
 
 def upload_image_public(jpg_path: Path) -> str:
     try:
-        return upload_to_imgur(jpg_path)
+        return upload_to_litterbox(jpg_path)
     except Exception as e1:
-        print(f"    imgur 실패({e1}), litterbox 시도...")
+        print(f"    litterbox 실패({e1}), imgur 시도...")
         try:
-            return upload_to_litterbox(jpg_path)
+            return upload_to_imgur(jpg_path)
         except Exception as e2:
-            raise ValueError(f"모든 업로드 실패 — imgur: {e1} / litterbox: {e2}")
+            raise ValueError(f"모든 업로드 실패 — litterbox: {e1} / imgur: {e2}")
 
 
 # ─────────────────────────────────────────
@@ -287,6 +287,8 @@ def create_carousel_container(user_id: str, token: str, children: list[str], cap
         "text": caption,
         "access_token": token,
     })
+    if not r.ok:
+        print(f"[threads] 캐러셀 컨테이너 오류 응답: {r.status_code}\n{r.text}")
     r.raise_for_status()
     return r.json()['id']
 
